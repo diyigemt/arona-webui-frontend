@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Bandder: typeof import('./components/home/Bandder.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -16,6 +17,7 @@ declare module '@vue/runtime-core' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     EnProcess: typeof import('./components/EnProcess.md')['default']
     GSTC: typeof import('./components/GSTC.vue')['default']
+    HomeBanner: typeof import('./components/home/HomeBanner.vue')['default']
     IAkarIconsGithubFill: typeof import('~icons/akar-icons/github-fill')['default']
     ILaLanguage: typeof import('~icons/la/language')['default']
     IMdiContentDuplicate: typeof import('~icons/mdi/content-duplicate')['default']
