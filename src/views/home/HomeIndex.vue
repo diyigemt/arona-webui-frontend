@@ -1,6 +1,4 @@
-<template>
-  <HomeBanner />
-</template>
+<template>this is home</template>
 
 <script setup lang="ts"></script>
 
