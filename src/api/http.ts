@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { ElMessage } from "element-plus";
 import showCodeMessage from "@/api/code";
 import { formatJsonToUrlParams, instanceObject } from "@/utils/format";
 
@@ -48,19 +49,19 @@ axiosInstance.interceptors.response.use(
   },
 );
 const service = {
-  get<T = any>(url: string, data?: object): Promise<T> {
+  get<T>(url: string, data?: object): Promise<T> {
     return axiosInstance.get(url, { params: data });
   },
 
-  post<T = any>(url: string, data?: object): Promise<T> {
+  post<T>(url: string, data?: object): Promise<T> {
     return axiosInstance.post(url, data);
   },
 
-  put<T = any>(url: string, data?: object): Promise<T> {
+  put<T>(url: string, data?: object): Promise<T> {
     return axiosInstance.put(url, data);
   },
 
-  delete<T = any>(url: string, data?: object): Promise<T> {
+  delete<T>(url: string, data?: object): Promise<T> {
     return axiosInstance.delete(url, data);
   },
 

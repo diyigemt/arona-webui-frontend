@@ -1,26 +1,39 @@
-interface MenuItem {
+interface SubMenuItem {
   name: string;
   path: string;
 }
-
-export const ConfigMenu: MenuItem[] = [
+interface MenuItem {
+  name: string;
+  children: SubMenuItem[];
+}
+const ConfigMenu: SubMenuItem[] = [
   {
     name: "arona.yml",
-    path: "/config/arona",
+    path: "/config/config-arona",
   },
   {
     name: "arona-emergency.yml",
-    path: "/config/arona-emergency",
+    path: "/config/config-arona-emergency",
   },
 ];
-
-export const DatabaseMenu: MenuItem[] = [
+const DatabaseMenu: SubMenuItem[] = [
   {
     name: "GachaPool",
-    path: "/config/arona",
+    path: "/database/database-gacha-pool",
   },
   {
     name: "GachaHistory",
-    path: "/config/arona-emergency",
+    path: "/database/database-gacha-history",
+  },
+];
+// eslint-disable-next-line import/prefer-default-export
+export const MenuConfig: MenuItem[] = [
+  {
+    name: "配置文件",
+    children: ConfigMenu,
+  },
+  {
+    name: "数据库文件",
+    children: DatabaseMenu,
   },
 ];
